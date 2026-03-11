@@ -145,4 +145,9 @@ ul.sub_main_menu li {
     width: 100%;
     margin-bottom: 1.5em;
   }
+  #main_body img {
+    float: none;
+    display: block;
+    margin: 0 auto 16px auto;
+  }
 }
