@@ -54,6 +54,9 @@
 <pre class="showcase">source("foo.R")</pre>
 <p>This assumes <code>foo.R</code> is saved in the current working directory. For a more comfortable editing environment with syntax highlighting, <a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio</a> is the current standard recommendation.</p>
 
+<h4>Menu-Driven GUI: R Commander (Rcmdr)</h4>
+<p>Package <a href="http://cran.r-project.org/web/packages/Rcmdr/index.html" target="_blank">Rcmdr</a> provides a point-and-click interface for many standard statistical tasks. Every menu selection generates the corresponding R code in the output window, which can be copied, edited, and rerun — making it a useful bridge for students transitioning to scripting. It is particularly well suited for introductory-level work. John Fox (the package author) has written a textbook built around it: Fox, J. (2016). <em>Using the R Commander: A Point-and-Click Interface for R</em>. Chapman &amp; Hall. <a href="https://doi.org/10.1201/9781315380537" target="_blank">https://doi.org/10.1201/9781315380537</a>. See also <a href="http://www.rcommander.com/" target="_blank">http://www.rcommander.com</a>.</p>
+
 <h4>Installing Packages Without Administrative Privileges</h4>
 <p>On a public or shared computer where you lack admin rights but have a read/write-accessible folder, redirect the R library path to that folder. Create a subfolder (e.g., <code>R_Packages_Library</code>) inside your accessible drive, then run:</p>
 <pre class="showcase">.libPaths(c("H:\\R_Packages_Library", .libPaths()))</pre>
