@@ -3,12 +3,122 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV | Thomas T. John, Ph.D. | Syracuse University</title>
+  <title>Curriculum Vitae | Thomas T. John, Ph.D.</title>
   <link rel="stylesheet" href="tjDesign.css">
+  <style>
+    /* ── CV-specific overrides ── */
+    #cv_body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2em 2.5em 3em 2.5em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.97em;
+      line-height: 1.6;
+      color: #111;
+    }
+
+    /* Contact block */
+    #cv_contact {
+      margin-bottom: 1.6em;
+    }
+    #cv_contact .cv_name {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #1a2e52;
+      margin-bottom: 0.2em;
+    }
+    #cv_contact p {
+      margin: 0.15em 0;
+      font-size: 0.93em;
+      color: #333;
+    }
+
+    /* Section headings — navy bar with centered bold label */
+    .cv_section_head {
+      background-color: #1a2e52;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3em 0.8em;
+      margin: 1.8em 0 0.8em 0;
+    }
+
+    /* Two-column date/content rows */
+    .cv_entry {
+      display: flex;
+      gap: 1.2em;
+      margin-bottom: 1.2em;
+    }
+    .cv_date {
+      min-width: 110px;
+      max-width: 110px;
+      font-size: 0.85em;
+      color: #555;
+      padding-top: 0.1em;
+      line-height: 1.4;
+      text-align: right;
+    }
+    .cv_content {
+      flex: 1;
+    }
+    .cv_content strong {
+      color: #1a2e52;
+    }
+
+    /* Bullet lists */
+    #cv_body ul {
+      margin: 0.4em 0 0.4em 1.2em;
+      padding: 0;
+    }
+    #cv_body ul li {
+      margin-bottom: 0.35em;
+    }
+
+    /* Italic sub-lines */
+    .cv_subline {
+      font-style: italic;
+      color: #444;
+      font-size: 0.93em;
+      margin: 0.2em 0 0.5em 0;
+    }
+
+    /* Underlined labels for course lists */
+    .cv_courses {
+      margin-top: 0.5em;
+      font-size: 0.93em;
+    }
+    .cv_courses span {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* Arrow bullets for consulting entries */
+    .cv_arrow_list {
+      list-style: none;
+      margin: 0.4em 0 0.4em 0;
+      padding: 0;
+    }
+    .cv_arrow_list li {
+      padding-left: 1em;
+      margin-bottom: 0.6em;
+    }
+    .cv_arrow_label {
+      font-weight: bold;
+      color: #1a2e52;
+    }
+
+    /* Print styles */
+    @media print {
+      #cv_body { padding: 0; font-size: 0.9em; }
+      .cv_section_head { background-color: #000 !important; -webkit-print-color-adjust: exact; }
+      ul.main_menu, #header { display: none; }
+    }
+  </style>
 </head>
-
 <body>
-
 <!-- ===== HEADER ===== -->
 <div id="header">
   <h1>Thomas T. John, Ph.D.</h1>
@@ -19,197 +129,288 @@
   </span>
 </div>
 
-<!-- ===== MAIN CONTENT ===== -->
-<div id="main_body">
+<!-- ===== CV BODY ===== -->
+<div id="cv_body">
 
-  <h2>Curriculum Vitae</h2>
+  <!-- Contact -->
+  <div id="cv_contact">
+    <div class="cv_name">Thomas T. John, Ph.D.</div>
+    <p>7655 W Seneca Turnpike, PO Box 291, Manlius, NY 13104</p>
+    <p>
+      Mobile: 315.727.4082 &nbsp;|&nbsp;
+      Email: <a href="mailto:thjohn.syr.edu@gmail.com">thjohn.syr.edu@gmail.com</a> &nbsp;|&nbsp;
+      LinkedIn: <a href="https://linkedin.com/in/thomastjohn" target="_blank">linkedin.com/in/thomastjohn</a>
+    </p>
+  </div>
 
-  <p style="font-size:0.88em; color:#555;">
-    A full PDF version of my CV is available upon request:
-    <a href="mailto:thjohn@syr.edu">thjohn@syr.edu</a>
+  <!-- Professional Summary -->
+  <div class="cv_section_head">Professional Summary</div>
+  <p>
+    Statistician and data analyst with 20+ years of combined experience in applied industry
+    research, independent consulting, and university-level instruction. Expertise spans
+    predictive modeling, data automation, survey analytics, biostatistics, and statistical
+    computing across a broad range of sectors &mdash; from Fortune 500 telecommunications
+    and technology firms to global logistics, healthcare, automotive, and manufacturing
+    clients. Known for rapidly acquiring new technical environments and translating complex
+    analytical findings into clear, actionable insights for diverse stakeholders at every
+    level of technical sophistication.
+  </p>
+  <p>
+    What distinguishes this body of work is not breadth alone, but depth of ownership:
+    analytical pipelines built from scratch, methodologies introduced and operationalized
+    without a roadmap, and solutions driven to adoption through organizational friction.
+    Published clinical research, globally deployed segmentation tools, and peer-reviewed
+    mathematical contributions sit alongside practical automation systems and real-time
+    consulting interventions &mdash; reflecting a career in which rigorous statistical
+    thinking has consistently met the demands of high-stakes, real-world problems.
+    Currently serving as Assistant Teaching Professor of Statistics at Syracuse University
+    while maintaining an active independent consulting practice.
   </p>
 
-  <!-- ===== EDUCATION ===== -->
-  <a name="education"></a>
-  <h3>Education</h3>
-  <ul>
-    <li><strong>Ph.D., Mathematics</strong> (2004) &mdash; Syracuse University, Syracuse, NY
-      <ul>
-        <li>Concentration: Statistics</li>
-        <li>Dissertation: <a href="http://surface.syr.edu/mat_etd/30/" target="_blank">
-          Selection Procedures for Lognormal Populations</a></li>
-        <li>Full Graduate Scholarship</li>
-      </ul>
-    </li>
-    <li><strong>M.S., Mathematics</strong> (2000) &mdash; Syracuse University, Syracuse, NY
-      <ul>
-        <li>Concentration: Probability and Statistics</li>
-      </ul>
-    </li>
-    <li><strong>B.A., Mathematics</strong> (1996) &mdash; Queens College, CUNY, Flushing, NY
-      <ul>
-        <li>Magna Cum Laude &nbsp;|&nbsp; Phi Beta Kappa &nbsp;|&nbsp;
-            Pi Mu Epsilon &nbsp;|&nbsp; Golden Key National Honor Society</li>
-        <li>Presidential Award for Outstanding Freshmen (1993);
-            Dean's List every semester 1992&ndash;1996</li>
-      </ul>
-    </li>
-  </ul>
-
-  <!-- ===== PUBLICATIONS ===== -->
-  <a name="publications"></a>
-  <h3>Selected Publications</h3>
-  <ul>
-    <li>Marwaha S., John T., et al.
-      User Preference and Workflow Evaluation of a Vital Signs Monitor.
-      <em>Advances in Human Factors and Ergonomics in Healthcare</em>,
-      AHFE 2020, Springer.</li>
-    <li>Neely J., John T., et al.
-      Impact of Single Sign-On Adoption in an Assessment Triage Unit.
-      <em>Journal of Nursing Administration</em>, Vol. 50(3), 2020.</li>
-    <li>Alpert B., John T., et al.
-      Accurate Blood Pressure During Patient Arm Movement.
-      <em>Blood Pressure Monitoring</em>, Vol. 24, 2019.</li>
-    <li>John T. &amp; Chen P.
-      <a href="http://dx.doi.org/10.1080/03610920801956421" target="_blank">
-      <strong>L</strong><sup>1</sup>-limit of Trimmed Sums of Order Statistics.</a>
-      <em>Communications in Statistics &mdash; Theory and Methods</em>,
-      Vol. 37(16), 2008.</li>
-    <li>John T. &amp; Chen P.
-      <a href="http://dx.doi.org/10.1080/07474940600596661" target="_blank">
-      Selection of the Best from Log-normal Populations Using Type-II Censored Data.</a>
-      <em>Sequential Analysis</em>, Vol. 25, 2006.</li>
-    <li>John T. &amp; Chen P.
-      <a href="http://dx.doi.org/10.1109/TR.2005.858098" target="_blank">
-      Log-normal Selection with Applications to Lifetime Data.</a>
-      <em>IEEE Transactions on Reliability</em>, Vol. 55(1), 2006.</li>
-    <li>John T., Jagannathan R., &amp; Velu R.
-      A Test of Linear Beta Pricing When Error Covariance Matrix is Diagonal.
-      <em>Manuscript in Preparation.</em></li>
-  </ul>
-
-  <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
-  <a name="experience"></a>
-  <h3>Professional Experience</h3>
-
-  <ul>
-    <li><strong>Assistant Teaching Professor, Department of Mathematics</strong><br>
-      Syracuse University, Syracuse, NY &mdash; August 2010 &ndash; Present
-      <ul>
-        <li>Teach and develop graduate and undergraduate courses in statistics,
-            probability, data science, and statistical computing</li>
-        <li>Developed and launched new courses: Statistical Computing (MAT 422),
-            Data Science (MAT 495), Actuarial Mathematics (MAT 528)</li>
-        <li>Regularly teach MAT 750 Statistical Consulting, supervising graduate
-            students on real-world client-facing analytical projects</li>
-        <li>Serve on College Curriculum Committee and departmental search committees</li>
-      </ul>
-    </li>
-
-    <li><strong>SUPA Statistics Faculty Liaison</strong><br>
-      Syracuse University Project Advance &mdash; 2023 &ndash; Present
-      <ul>
-        <li>Oversee 36 sections of MAT 221/222 across 15+ NYS school districts</li>
-        <li>Coordinate instructor training (Summer Institute), professional development
-            seminars, and semester classroom visits</li>
-      </ul>
-    </li>
-
-    <li><strong>Independent Statistical Consulting Practice</strong><br>
-      2010 &ndash; Present
-      <ul>
-        <li>Clients spanning healthcare, engineering, higher education, and industry</li>
-        <li>Engagements include medical device validation studies, R/Shiny application
-            development, biostatistical advisory consulting, and higher education
-            persistence research</li>
-      </ul>
-    </li>
-
-    <li><strong>Lead Statistician, KS&amp;R (Knowledge Systems &amp; Research) Inc.</strong><br>
-      Syracuse, NY &mdash; November 2004 &ndash; August 2010
-      <ul>
-        <li>Sole senior statistician serving Fortune 500 clients including AT&amp;T,
-            FedEx, IBM, Microsoft, American Cancer Society, Welch Allyn, ADP,
-            Cox Automotive, MTD, Spectrum/TWC</li>
-        <li>Discrete choice / conjoint analysis, MaxDiff scaling, market segmentation,
-            survey design and weighting, structural equation modeling</li>
-        <li>Built end-to-end analytical pipelines: experimental design through
-            CBC/HB estimation through VBA market simulation delivery</li>
-        <li>Developed firm-wide SPSS-to-PowerPoint reporting automation platform</li>
-      </ul>
-    </li>
-
-    <li><strong>Adjunct Faculty, Department of Finance</strong><br>
-      Whitman School of Management, Syracuse University &mdash;
-      Summers 2004&ndash;10, Fall 2012
-      <ul>
-        <li>Courses: Introduction to Statistics for Management; Decision Tools for
-            Management; Data Analysis and Decision Making (MBA-level)</li>
-      </ul>
-    </li>
-
-    <li><strong>Teaching Assistant, Department of Mathematics</strong><br>
-      Syracuse University &mdash; Spring 1998 &ndash; Spring 2004</li>
-  </ul>
-
-  <!-- ===== TEACHING ===== -->
-  <a name="teaching"></a>
-  <h3>Courses Taught at Syracuse University</h3>
-
-  <p><em>Graduate:</em> Multivariate Methods (755), Statistical Consulting (750),
-  Data Science (695/495), Statistical Computing/Simulation (653),
-  Actuarial Mathematics (528), Stochastic Processes (526),
-  Mathematical Statistics (525), Mathematical Probability (521)</p>
-
-  <p><em>Undergraduate:</em> Linear Algebra &amp; Differential Equations (485),
-  Statistical Computing (422), Calculus sequences,
-  Intro. Probability &amp; Statistics (221/222)</p>
-
-  <!-- ===== TECHNICAL SKILLS ===== -->
-  <a name="skills"></a>
-  <h3>Technical Skills</h3>
+  <!-- Skills -->
+  <div class="cv_section_head">Core Competencies &amp; Technical Skills</div>
+  <p><strong>Hard Skills</strong></p>
   <ul>
     <li><strong>Statistical Methods:</strong> Regression (OLS, Logistic, LASSO, Elastic Net),
-        GLMs, Time Series, Discriminant Analysis, CART, Random Forest, Factor Analysis,
-        Structural Equation Modeling, Survival Analysis, Discrete Choice / Conjoint Analysis,
-        Maximum Difference Scaling, Survey Weighting</li>
-    <li><strong>Software:</strong> SAS (SAS/STAT, SAS/QC, SAS/GRAPH), R, SPSS, JMP,
-        Minitab, MATLAB, Maple</li>
+      GLMs, Time Series, Discriminant Analysis, CART, Random Forest, Factor Analysis,
+      Structural Equation Modeling, Survival Analysis, Discrete Choice / Conjoint Analysis,
+      Maximum Difference Scaling, Survey Weighting</li>
+    <li><strong>Software &amp; Tools:</strong> SAS (SAS/STAT, SAS/QC, SAS/GRAPH; installation
+      verification in FDA-regulated environments), R (including PostgreSQL integration via
+      RPostgres/DBI), SPSS, JMP, Minitab, MATLAB, Maple</li>
     <li><strong>Programming:</strong> Visual Basic / Office-VBA, R/Shiny, Perl, Fortran,
-        HTML, JavaScript, CSS</li>
-    <li><strong>Platforms:</strong> Sawtooth CBC/HB, WeBWorK, Gradescope, LaTeX</li>
+      HTML, JavaScript, CSS</li>
+    <li><strong>Platforms:</strong> Sawtooth CBC/HB (Hierarchical Bayes Conjoint),
+      WeBWorK, Gradescope</li>
+    <li><strong>Reporting &amp; BI:</strong> Statistical reporting automation, dashboard
+      design, data workflow development</li>
+  </ul>
+  <p><strong>Soft Skills</strong></p>
+  <ul>
+    <li><strong>Communication:</strong> Translating complex methodology and findings for
+      non-technical audiences across corporate, clinical, and academic settings</li>
+    <li><strong>Adaptability:</strong> Consistent track record of rapidly acquiring
+      unfamiliar technical tools and environments to deliver working solutions under
+      deadline</li>
+    <li><strong>Collaboration:</strong> Cross-functional engagement with diverse client and
+      research teams spanning market research, healthcare, engineering, and academia</li>
+    <li><strong>Mentoring:</strong> Career-direction guidance for undergraduates (actuarial
+      pathways, GitHub, LinkedIn presence) and professional positioning for graduate
+      students (translating teaching assistantship experience into industry framing)</li>
   </ul>
 
-  <!-- ===== SERVICE ===== -->
-  <a name="service"></a>
-  <h3>Service &amp; Professional Affiliations</h3>
+  <!-- Consulting -->
+  <div class="cv_section_head">Industry &amp; Consulting Experience</div>
+  <p class="cv_subline">KS&amp;R (Knowledge Systems &amp; Research) Inc. &mdash; 2004&ndash;2010;
+    Independent Practice &mdash; 2010&ndash;Present</p>
+  <p class="cv_subline">Clients spanning telecommunications, technology, logistics, healthcare,
+    automotive, and manufacturing &mdash; including AT&amp;T, FedEx, IBM, Microsoft,
+    American Cancer Society, Welch Allyn, ADP, Cox Automotive, MTD, Spectrum/TWC</p>
+  <ul class="cv_arrow_list">
+    <li><span class="cv_arrow_label">Closing competitive gaps &rarr; Brought &amp; incorporated
+      rival-proven methodology:</span> Introduced Maximum Difference Scaling (MaxDiff) to the
+      organization &mdash; a method already used by competing analytic firms. Secured internal
+      buy-in, developed proposal language for client pitches, built survey logistics, analysis
+      workflows, and presentation formats from the ground up.</li>
+    <li><span class="cv_arrow_label">Brittle legacy &rarr; powerful, efficient pipeline:</span>
+      Replaced a manually-patched Sawtooth-dependent experimental design process &mdash; where
+      constraint violations required hand-correction across every project &mdash; with a
+      constraint-capable system built on SAS/QC (PROC FACTEX, OPTEX). Designed full downstream
+      delivery: Excel workbooks (one sheet per choice task) for client review teams, and
+      HTML/CSS/JavaScript pages for field programming teams. Automated back-end construction of
+      Sawtooth-required .cho files by merging design structure with collected sample data,
+      enabling CBC/HB analysis without Sawtooth&rsquo;s front-end.</li>
+    <li><span class="cv_arrow_label">Innovative solo build &rarr; adoption pushed through
+      friction:</span> Envisioned and single-handedly built a VBA-based reporting automation
+      platform that replaced a multi-person war-room assembly process &mdash; where assistants
+      hand-transcribed significance letters and numbers from printed SPSS crosstabs into
+      PowerPoint page by page. Drove adoption through organizational resistance to deliver a
+      fully automated SPSS-to-PowerPoint pipeline.</li>
+    <li><span class="cv_arrow_label">Mission-critical and complex &rarr; global segmentation
+      with high stakes:</span> Led market segmentation and classification modeling for a
+      multi-million dollar global B2B engagement, navigating client anxiety about organizational
+      disruption and execution complexity across a geographically dispersed salesforce. Delivered
+      a multilingual Excel-based classification tool for field use across international
+      markets.</li>
+    <li><span class="cv_arrow_label">Western theory, Asian markets &rarr; customer equity
+      modeling across Asia-Pacific:</span> Applied the Rust, Zeithaml &amp; Lemon customer
+      equity framework (brand loyalty, value equity, retention equity as latent constructs) to
+      a FedEx APAC engagement spanning Thailand, Vietnam, Hong Kong, and surrounding markets
+      using canonical correlation and structural equation modeling.</li>
+    <li><span class="cv_arrow_label">Obsolete platform, tight deadline &rarr; crisis solution
+      built from scratch:</span> Rapidly designed and delivered a working analytical solution
+      under deadline pressure using an unfamiliar legacy platform, with no prior exposure to
+      the environment.</li>
+    <li><span class="cv_arrow_label">Go-to across teams &rarr; survey design, weighting, and
+      proposal language firm-wide:</span> Served as the internal methodological authority on
+      survey question design (bias-free phrasing, rating/ranking exercises, feature
+      distinction), stratified sampling, and weighting methodology &mdash; regularly consulted
+      by research analysts and project managers across all client teams for both proposal
+      language and execution guidance.</li>
+  </ul>
+  <p>
+    Additional engagements have spanned biostatistical analysis for medical device validation
+    studies, R/Shiny application development, higher education persistence research, and
+    cross-disciplinary academic consulting. Device validation work for Welch Allyn included
+    Bland-Altman plots produced using customized SAS/GRAPH code that appeared in published
+    clinical research summaries used in product documentation, still publicly available.
+    R/Shiny work involved building a web portal alongside a maintained Excel simulator,
+    including security and credential management for access by particular team members only.
+    A university College of Engineering cohort study yielded actionable findings through data
+    slicing via pivot tables and cross-tabulation &mdash; without formal modeling &mdash;
+    surfacing patterns that had been overlooked internally.
+  </p>
+
+  <!-- Academic Experience -->
+  <div class="cv_section_head">Academic Experience</div>
+
+  <div class="cv_entry">
+    <div class="cv_date">August 2010&nbsp;&ndash;<br>Present</div>
+    <div class="cv_content">
+      <strong>Assistant Teaching Professor, Department of Mathematics</strong><br>
+      Syracuse University, Syracuse, NY<br>
+      <p>Teach and develop graduate and undergraduate courses in statistics, probability,
+      data science, and statistical computing.</p>
+      <ul>
+        <li>Developed and launched new courses in Statistical Computing (MAT 422),
+          Data Science (MAT 495), and Actuarial Mathematics (MAT 528)</li>
+        <li>Continue to frequently instruct MAT 750 Statistical Consulting, supervising
+          graduate students on real-world client-facing analytical projects</li>
+        <li>Communicate complex statistical concepts clearly to audiences ranging from
+          introductory undergraduates to doctoral candidates</li>
+        <li>Serve on College Curriculum Committee and departmental search committees;
+          provide ongoing contributions to statistics and actuarial program development</li>
+      </ul>
+      <div class="cv_courses">
+        <span>Graduate courses:</span> Multivariate Methods (755), Statistical Consulting (750),
+        Data Science (695/495), Statistical Computing/Simulation (653), Actuarial Mathematics
+        (528), Stochastic Processes (526), Mathematical Statistics (525), Mathematical
+        Probability (521)<br><br>
+        <span>Undergraduate courses:</span> Linear Algebra &amp; Differential Equations (485),
+        Statistical Computing (422), Calculus sequences, Intro. Probability &amp;
+        Statistics (221/222)
+      </div>
+    </div>
+  </div>
+
+  <div class="cv_entry">
+    <div class="cv_date">2023&nbsp;&ndash;<br>Present</div>
+    <div class="cv_content">
+      <strong>SUPA Statistics Faculty Liaison</strong><br>
+      Syracuse University Project Advance, Syracuse University, Syracuse, NY<br>
+      <p>Oversee 36 sections of MAT 221/222 across 15+ NYS school districts; coordinate
+      instructor training (Summer Institute), professional development seminars, and semester
+      classroom visits in collaboration with SUPA program administration.</p>
+    </div>
+  </div>
+
+  <div class="cv_entry">
+    <div class="cv_date">Summers 2004&ndash;10;<br>Fall 2012</div>
+    <div class="cv_content">
+      <strong>Adjunct Faculty, Department of Finance</strong><br>
+      Whitman School of Management, Syracuse University, Syracuse, NY<br>
+      <p>Courses Taught: Introduction to Statistics for Management, Decision Tools for
+      Management, Data Analysis and Decision Making (MBA-level)</p>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="cv_section_head">Education</div>
+
+  <div class="cv_entry">
+    <div class="cv_date">May 2004</div>
+    <div class="cv_content">
+      <strong>Ph.D., Mathematics &mdash; Concentration: Statistics</strong><br>
+      Syracuse University, Syracuse, NY<br>
+      Dissertation: <em>Selection Procedures for Lognormal Populations</em>
+    </div>
+  </div>
+
+  <div class="cv_entry">
+    <div class="cv_date">December 2000</div>
+    <div class="cv_content">
+      <strong>M.S., Mathematics &mdash; Concentration: Probability and Statistics</strong><br>
+      Syracuse University, Syracuse, NY
+    </div>
+  </div>
+
+  <div class="cv_entry">
+    <div class="cv_date">May 1996</div>
+    <div class="cv_content">
+      <strong>B.A., Mathematics &mdash; Magna Cum Laude</strong><br>
+      Queens College of the City University of New York, Flushing, NY
+    </div>
+  </div>
+
+  <!-- Honors -->
+  <div class="cv_section_head">Honors</div>
+  <ul>
+    <li>Full Scholarship for Graduate Study, Syracuse University</li>
+    <li>Phi Beta Kappa (Sigma Chapter of NY, 1995); Golden Key National Honor Society (1994);
+      Pi Mu Epsilon (NY Alpha Alpha, 1996)</li>
+    <li>Presidential Award for Outstanding Freshmen, Queens College (1993);
+      Dean&rsquo;s List every semester 1992&ndash;1996</li>
+  </ul>
+
+  <!-- Publications -->
+  <div class="cv_section_head">Selected Publications</div>
+  <ul>
+    <li>Marwaha S., John T., et al. User Preference and Workflow Evaluation of a Vital Signs
+      Monitor. <em>Advances in Human Factors and Ergonomics in Healthcare</em>, AHFE 2020,
+      Springer.</li>
+    <li>Neely J., John T., et al. Impact of Single Sign-On Adoption in an Assessment Triage
+      Unit. <em>Journal of Nursing Administration</em>, Vol.&nbsp;50(3), 2020.</li>
+    <li>Alpert B., John T., et al. Accurate Blood Pressure During Patient Arm Movement.
+      <em>Blood Pressure Monitoring</em>, Vol.&nbsp;24, 2019.</li>
+    <li>John T. &amp; Chen P. &#8466;<sup>1</sup>-limit of Trimmed Sums of Order Statistics.
+      <em>Communications in Statistics &mdash; Theory and Methods</em>,
+      Vol.&nbsp;37(16), 2008.</li>
+    <li>John T. &amp; Chen P. Selection of the Best from Log-normal Populations Using
+      Type-II Censored Data. <em>Sequential Analysis</em>, Vol.&nbsp;25, 2006.</li>
+    <li>John T. &amp; Chen P. Log-normal Selection with Applications to Lifetime Data.
+      <em>IEEE Transactions on Reliability</em>, Vol.&nbsp;55(1), 2006.</li>
+    <li>John T., Jagannathan R., &amp; Velu R. A Test of Linear Beta Pricing When Error
+      Covariance Matrix is Diagonal. <em>Manuscript in Preparation</em>.</li>
+  </ul>
+
+  <!-- Service -->
+  <div class="cv_section_head">Professional Affiliations, Service &amp; Presentations</div>
   <ul>
     <li>Referee: <em>Discrete Event Dynamic Systems</em>; <em>Sequential Analysis</em>;
-        <em>Simulation Modelling: Practice &amp; Theory</em>;
-        <em>Journal of Business Research</em></li>
+      <em>Simulation Modelling: Practice &amp; Theory</em>;
+      <em>Journal of Business Research</em></li>
     <li>Invited presentations, Society of Clinical Research Associates (NY Chapter):
-        statistical methods for clinical researchers (2013&ndash;2023); invited lecture,
-        SOCRA 24th Annual Conference, Denver, September 2015</li>
+      statistical methods for clinical researchers (2013&ndash;2023); including invited
+      lecture at SOCRA 24th Annual Conference, Denver, September 2015</li>
     <li>Invited talk, CNY Biotech Accelerator: Statistics/Sample Size/Data Methods (2017)</li>
     <li>Invited Chair, Session on Statistics, AMS-MAA Joint Meetings, Phoenix (2004)</li>
-    <li>Contributed to reconstruction of Reinsel &amp; Velu,
-        <em>Multivariate Statistical Analysis</em> (2nd ed., Springer)</li>
-    <li>Ren&eacute;e Crown University Honors Capstone Thesis advisor (Grace Mehr),
-        Spring 2020</li>
-    <li>Women in Science and Engineering (WiSE) portfolio reviewer,
-        Syracuse University: 2020, 2021</li>
+    <li>Leveraging Primary Market Research Synchronized with Data Mining Models,
+      International Conference on Business Data Mining, C.R. Rao Institute of Mathematics
+      &amp; Statistics, University of Hyderabad, December 2008</li>
+    <li>Guest lectures, MAR 600 (Marketing Analytics), Whitman School of Management:
+      Supervised &amp; Unsupervised Machine Learning with R Illustrations (2015);
+      CART &amp; Random Forest &mdash; Applications of Classification to Marketing (2013)</li>
+    <li>Guest lectures, MAT 752 (Statistical Ranking &amp; Selection), Department of
+      Mathematics: Selection Procedures for Log-Location-Scale Populations (2015, 2016)</li>
+    <li>Contributed to reconstruction and preparation of Reinsel &amp; Velu,
+      <em>Multivariate Statistical Analysis</em> (2nd ed., Springer), supporting posthumous
+      continuation of the work following Reinsel&rsquo;s passing</li>
+    <li>Rен&eacute;e Crown University Honors Capstone Thesis advisor (Grace Mehr),
+      Syracuse University, Spring 2020</li>
+    <li>Women in Science and Engineering (WiSE) portfolio reviewer, Syracuse University:
+      June 2020, June 2021</li>
+    <li>Dissertation committee member (Benjamin Cortese), Syracuse University, 2015</li>
+    <li>Ph.D. comprehensive examination committee (Krzysztof Herman), Whitman School of
+      Management, Syracuse University, Summer 2013</li>
   </ul>
 
-  <br>
-  <a href="#education">Back to Top</a>
-
-</div>
+</div><!-- end cv_body -->
 
 <!-- ===== FOOTER ===== -->
 <address>
   <strong>Thomas T. John, Ph.D.</strong><br>
   Department of Mathematics &nbsp;|&nbsp;
-  <a href="https://artsandsciences.syracuse.edu/mathematics/">Syracuse University</a><br>
+  <a href="https://artsandsciences.syracuse.edu/mathematics/" target="_blank">Syracuse University</a><br>
   313D Carnegie Library, Syracuse, NY 13244<br>
   Office: 315-443-1587 &nbsp;|&nbsp;
   Email: <a href="mailto:thjohn@syr.edu">thjohn@syr.edu</a> &nbsp;|&nbsp;
@@ -219,9 +420,7 @@
 
 <!-- ===== NAVIGATION MENU ===== -->
 <ul class="main_menu">
-  <li>
-    <a href="index.html">Home</a>
-  </li>
+  <li><a href="index.html">Home</a></li>
   <li class="open_up_three">
     <a href="cv.html">Curriculum Vitae</a>
     <ul class="sub_main_menu">
@@ -244,9 +443,7 @@
       <li><a href="teaching.html#supa">SUPA Liaison</a></li>
     </ul>
   </li>
-  <li>
-    <a href="publications.html">Publications</a>
-  </li>
+  <li><a href="publications.html">Publications</a></li>
 </ul>
 
 </body>
