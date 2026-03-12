@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Science, Automation &amp; Related Technology | Thomas T. John</title>
+<link rel="stylesheet" href="201301tjDesign.css">
+<style>
+  pre.showcase {
+    background: #f5f5f5;
+    border-left: 3px solid #888;
+    padding: 0.75em 1em;
+    overflow-x: auto;
+    font-size: 0.92em;
+    line-height: 1.5;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2em 0 1.5em 0;
+  }
+  h3 { margin-top: 1.5em; }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>Thomas T. John, Ph.D.</h1>
+  Assistant Teaching Professor of Mathematics (Statistics) |
+  Consultant, Statistics &amp; Data Science
+</div>
+
+<div id="main_body">
+
+<h2>Data Science, Automation &amp; Related Technology</h2>
+
+<!-- ============================================================ -->
+<hr class="section-divider">
+<h3>Section 1: Notes on R</h3>
+<!-- ============================================================ -->
+
+<p>R is a highly versatile statistical and mathematical computing platform, and it is free and open source. Downloads and documentation are available at
+<a href="http://www.r-project.org/" target="_blank">http://www.r-project.org</a>.</p>
+
+<p><em>The notes in this section are recommendations for students in my statistics courses at Syracuse University and may not apply universally.</em></p>
+
+<h4>Working Directory</h4>
+<p>Keep files organized in a folder/subfolder structure. At the start of an R session, point the working directory to the relevant folder so files can be referenced locally. For example:</p>
+<pre class="showcase">setwd("H:/Folder/SubFolder/SubSubFolder")</pre>
+<p>Note the change from Windows backslash to forward slash.</p>
+
+<h4>Script Editor and Source</h4>
+<p>Command-line entry grows old quickly. Most work is better done in a script editor (in base R: File &gt; New Script). Select one or more lines and use <strong>Ctrl+R</strong> to run them. Scripts can be saved and later run in full from the console:</p>
+<pre class="showcase">source("foo.R")</pre>
+<p>This assumes <code>foo.R</code> is saved in the current working directory. For a more comfortable editing environment with syntax highlighting, <a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio</a> is the current standard recommendation.</p>
+
+<h4>Installing Packages Without Administrative Privileges</h4>
+<p>On a public or shared computer where you lack admin rights but have a read/write-accessible folder, redirect the R library path to that folder. Create a subfolder (e.g., <code>R_Packages_Library</code>) inside your accessible drive, then run:</p>
+<pre class="showcase">.libPaths(c("H:\\R_Packages_Library", .libPaths()))</pre>
+<p>After this, <code>install.packages()</code> will install to that folder for the session.</p>
+
+<h4>Additional Help and Reference Links</h4>
+<p>The links below have been useful starting points for R-related questions. Some may have moved or gone inactive over time.</p>
+<ul>
+  <li><a href="http://www.ats.ucla.edu/stat/r/" target="_blank">http://www.ats.ucla.edu/stat/r/</a></li>
+  <li><a href="http://ww2.coastal.edu/kingw/statistics/R-tutorials" target="_blank">http://ww2.coastal.edu/kingw/statistics/R-tutorials</a></li>
+  <li><a href="http://msenux.redwoods.edu/math/R/" target="_blank">http://msenux.redwoods.edu/math/R/</a></li>
+  <li><a href="http://www.statmethods.net" target="_blank">http://www.statmethods.net</a></li>
+  <li><a href="http://www.r-bloggers.com/" target="_blank">http://www.r-bloggers.com/</a></li>
+  <li><a href="http://www.sr.bham.ac.uk/~ajrs/R/r-function_list.html" target="_blank">http://www.sr.bham.ac.uk/~ajrs/R/r-function_list.html</a></li>
+  <li><a href="http://stackoverflow.com/tags/r/info" target="_blank">http://stackoverflow.com/tags/r/info</a></li>
+  <li><a href="http://www.stat.pitt.edu/stoffer/tsa2/R_time_series_quick_fix_ed2.htm" target="_blank">http://www.stat.pitt.edu/stoffer/tsa2/R_time_series_quick_fix_ed2.htm</a></li>
+</ul>
+
+<!-- ============================================================ -->
+<hr class="section-divider">
+<h3>Section 2: R in Google Colab — Quick Reference</h3>
+<!-- ============================================================ -->
+
+<p>The code blocks below are a working reference for R in Google Colab. They assume a dataframe <code>df_illustration</code> is available with variables: <code>BinaryV1</code>, <code>CategV1</code>, <code>CategV2</code>, <code>QuantV1</code>, <code>QuantV2</code>, <code>QuantV3</code>, <code>QuantV4</code>.</p>
+
+<h4>Setup: Mount Google Drive (Python cell — run before switching to R runtime)</h4>
+<pre class="showcase">from google.colab import drive
+drive.mount('/content/drive')
+# Google will prompt for authorization.
+# Your entire Google Drive is then accessible under /content/drive/MyDrive/</pre>
+
+<h4>Analysis 1: Summary and Boxplot of a Single Variable</h4>
+<pre class="showcase">summary(df_illustration$QuantV1)
+boxplot(df_illustration$QuantV1, main = "QuantV1 (All)")</pre>
+
+<h4>Analysis 2–3: Two-Group Comparison (Moore &amp; McCabe, Ch. 7)</h4>
+<pre class="showcase"># Summaries and boxplot by group
+tapply(df_illustration$QuantV1, df_illustration$BinaryV1, summary)
+boxplot(QuantV1 ~ BinaryV1, data = df_illustration, main = "QuantV1 by BinaryV1")
+
+# Two-sample t-test
+t.test(QuantV1 ~ BinaryV1, data = df_illustration)</pre>
+
+<h4>Analysis 4–5: One-Way ANOVA (Moore &amp; McCabe, Ch. 12)</h4>
+<pre class="showcase"># Summaries and boxplot by group
+tapply(df_illustration$QuantV1, df_illustration$CategV1, summary)
+boxplot(QuantV1 ~ CategV1, data = df_illustration, main = "QuantV1 by CategV1")
+
+# One-way ANOVA
+anova_fit &lt;- aov(QuantV1 ~ CategV1, data = df_illustration)
+summary(anova_fit)</pre>
+
+<h4>Analysis 6: Crosstabulation and Chi-Square Test (Moore &amp; McCabe, Ch. 9)</h4>
+<pre class="showcase">tab &lt;- table(df_illustration$CategV1, df_illustration$CategV2)
+tab                        # counts
+prop.table(tab, 2)         # column percentages
+prop.table(tab, 1)         # row percentages
+chisq.test(tab)$expected   # expected counts
+chisq.test(tab)            # chi-square test</pre>
+
+<h4>Analysis 7–8: Correlation and Scatterplot Matrix (Moore &amp; McCabe, Ch. 10)</h4>
+<pre class="showcase">cor(df_illustration[, c("QuantV1","QuantV2","QuantV3","QuantV4")], use = "complete.obs")
+pairs(df_illustration[, c("QuantV1","QuantV2","QuantV3","QuantV4")])</pre>
+
+<h4>Analysis 9: Simple Linear Regression (Moore &amp; McCabe, Ch. 10–11)</h4>
+<pre class="showcase">slr_fit &lt;- lm(QuantV1 ~ QuantV2, data = df_illustration)
+summary(slr_fit)
+par(mfrow = c(2, 2)); plot(slr_fit)</pre>
+
+<h4>Analysis 10: Multiple Linear Regression with VIFs (Moore &amp; McCabe, Ch. 11)</h4>
+<pre class="showcase">mlr_fit &lt;- lm(QuantV1 ~ QuantV2 + QuantV3 + QuantV4, data = df_illustration)
+summary(mlr_fit)
+par(mfrow = c(2, 2)); plot(mlr_fit)
+
+# Variance Inflation Factors — install 'car' package first if needed:
+# install.packages("car")
+library(car)
+vif(mlr_fit)</pre>
+
+<h4>Reading Data from a ZIP File</h4>
+<pre class="showcase"># Option 1: Read a CSV from inside a ZIP without extracting
+zip_path &lt;- "/content/drive/MyDrive/path/to/data.zip"
+utils::unzip(zip_path, list = TRUE)   # inspect contents first
+con &lt;- unz(zip_path, "inner/path/file.csv")
+data_streamed &lt;- read.csv(con)
+head(data_streamed)
+
+# Option 2: Unzip to a local folder, then read normally
+exdir &lt;- "/content/extracted_data"   # fast; ephemeral in Colab
+utils::unzip(zip_path, exdir = exdir)
+csv_path &lt;- file.path(exdir, "inner/path/file.csv")
+data_unzipped &lt;- read.csv(csv_path)
+head(data_unzipped)</pre>
+
+<h4>Reading Data Directly from a URL</h4>
+<pre class="showcase">data_from_url &lt;- read.table(
+  "https://raw.githubusercontent.com/your/repo/file.csv",
+  header = TRUE, sep = ","
+)
+head(data_from_url)</pre>
+
+</div><!-- end main_body -->
+
+<address>
+  email: thjohn at syr dot edu<br><br>
+  <a href="http://math.syr.edu">Dept of Mathematics</a> |
+  <a href="http://www.syr.edu">Syracuse University</a> |
+  Syracuse, NY 13244<br><br>
+  Updated: March 2026
+</address>
+
+<!-- Navigation Menu -->
+<ul class="main_menu">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="cv.html">Curriculum Vitae</a></li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="consulting.html">Consulting</a></li>
+  <li><a href="computing.html">Computing</a></li>
+</ul>
+<!-- END Navigation Menu -->
+
+</body>
+</html>
